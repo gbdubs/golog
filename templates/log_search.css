@@ -1,0 +1,37 @@
+{{define "log_search_css"}}
+/* log_search.css */
+
+#log-search {
+  font-family: monospace;
+}
+
+#log-search .hidden {
+  display: none;
+}
+#log-search .highlighted {
+  background: lightblue;
+}
+#log-search .even-row {
+  background: lightgray;
+}
+#log-search .log-filter-input {
+  font-family: monospace;
+  padding: 5px;
+  width: 100%;
+}
+#log-search .sort-toggle {
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+}
+
+#log-search th {
+  background: black;
+  color: white;
+}
+#log-search th, 
+#log-search td {
+  padding: 0 5px;
+  text-align: left;
+}
+{{end}}

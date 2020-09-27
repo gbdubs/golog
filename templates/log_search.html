@@ -1,0 +1,24 @@
+{{define "log_search_html"}}
+<!-- log_search.html -->
+
+<input class="log-filter-input" type="text" placeholder="Filter by Regex..."></input>
+<table>
+  <tr>
+    <th>ST</th>
+    <th>Timestamp <span class="sort-toggle">(None)</span></th>
+    <th>Level <span class="sort-toggle">(None)</span></th>
+    <th>Message <span class="sort-toggle">(None)</span></th>
+  </tr>
+  {{range $i, $e := .Entries}}
+    <tr data-original-index="{{$i}}">
+      <td>
+        <a class="stack-trace-link" href="#" data-stack-trace-id="{{$e.StackTrace.Id}}">ST</a>
+      </td>
+      <td data-content='{{$e.Timestamp.Format "2006-01-02 15:04:05.000000" }}'></td>
+      <td data-content="{{$e.LevelAsName}}"></td>
+      <td data-content="{{$e.Message}}"></td>
+    </tr>
+  {{end}}
+</table>
+
+{{end}}

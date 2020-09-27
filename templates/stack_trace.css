@@ -1,0 +1,109 @@
+{{define "stack_trace_css"}}
+/* stack_trace.css */
+
+#stack-trace {
+  font-family: monospace;
+  padding: 0;
+}
+
+#stack-trace .code-file,
+#stack-trace .code-files,
+#stack-trace .entries,
+#stack-trace .entry {
+  display: inline-block;
+  vertical-align: top;
+}
+
+#stack-trace .code-files,
+#stack-trace .entries {
+  margin: 5px 0 5px 5px;
+}
+
+#stack-trace .stack-trace {
+  padding: 5px;
+}
+
+#stack-trace .stack-trace-line {
+  cursor: pointer;
+  white-space: pre;
+}
+
+#stack-trace .hidden {
+  display: none;
+}
+
+#stack-trace .highlighted-code-file-line {
+  background: lightblue;
+}
+
+#stack-trace .hovered-breakpoint-arg-name,
+#stack-trace .hovered-stack-trace-line,
+#stack-trace .hovered-code-file-line {
+  background: lightskyblue;
+}
+
+#stack-trace .code-file {
+    border: 1px solid;
+}
+
+#stack-trace .code-file-line {
+    display: block;
+    height: 1rem;
+    white-space: pre;
+    padding-left: 5px;
+}
+
+#stack-trace .entry {
+  border: 1px solid black;
+}
+
+#stack-trace .entry-message {
+  padding: 5px;
+  font-weight: bold;
+}
+
+#stack-trace .code-file-header,
+#stack-trace .entry-message-header,
+#stack-trace .breakpoint-args-header,
+#stack-trace .stack-trace-header {
+  background: lightgray;
+  padding: 5px;
+  font-family: sans-serif;
+  font-size: .75rem;
+}
+
+#stack-trace .breakpoint-args {
+  padding: 5px;
+}
+
+#stack-trace .breakpoint-args table {
+  border-spacing: 0;
+  padding: 5px;
+  border-collapse: collapse;
+}
+
+#stack-trace .breakpoint-args .breakpoint-arg-value,
+#stack-trace .breakpoint-args .breakpoint-arg-name {
+  padding: 5px;
+  border: 1px solid black;
+}
+
+#stack-trace .breakpoint-args .breakpoint-arg-name {
+  cursor: pointer;
+}
+
+#stack-trace .breakpoint-args .breakpoint-arg-value {
+  white-space: pre;
+}
+
+#stack-trace .breakpoint-args th {
+    background: black;
+    color: white;
+    border-color: black;
+}
+
+#stack-trace .breakpoint-args-header {
+    padding: 5px;
+    background: lightgray;
+}
+{{end}}

@@ -1,0 +1,51 @@
+{{define "stack_trace_html"}}
+<!-- stack_trace.html -->
+
+<div class="entries">
+  {{range $i, $entry := .Entries}}
+  <div class="entry" data-stack-trace-id="{{$entry.StackTrace.Id}}">
+    <div class="entry-message-header">Log Message</div>
+    <div class="entry-message">{{$entry.Message}}</div>
+    <div class="stack-trace-header">Stack Trace <i>(inverted/chronological order)</i></div>
+    <div class="stack-trace">
+      {{range $j, $lineOfCode := $entry.StackTrace.Lines}}
+        <div class="stack-trace-line">{{$lineOfCode.FilePath}}:{{$lineOfCode.LineNumber}}</div>
+      {{end}}
+    </div>
+    {{if len .ArgsAsJson}}
+    <div class="breakpoint-args-header">Break Point Arguments</div>
+    <div class="breakpoint-args">
+      <table>
+        <tr>
+          <th>Variable</th>
+          <th>Value</th>
+        </tr>
+        <tr>
+          <td class="breakpoint-arg-name">BreakPoint Name</td>
+          <td class="breakpoint-arg-value">{{$entry.Message}}</td>
+        </tr>
+        {{range $j, $json := .ArgsAsJson}}
+          <tr>
+            <td class="breakpoint-arg-name">$j</td>
+            <td class="breakpoint-arg-value">{{$json}}</td>
+          </tr>
+        {{end}}
+      </table>
+    </div>
+    {{end}}
+  </div>
+  {{end}}
+</div>
+
+<div class="code-files">
+  {{range .Files}}
+  <div class="code-file" data-code-file-path="{{.FilePath}}">
+    <div class="code-file-header">{{.FilePath}}</div>
+    {{range .Lines}}
+    <div class="code-file-line">{{.}}</div>
+    {{end}}
+  </div>
+  {{end}}
+</div>
+
+{{end}}

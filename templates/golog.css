@@ -1,0 +1,40 @@
+{{define "golog_css"}}
+/* golog_css */
+
+/* To dethrone this as the best variable name of all time, please send challengers to grady.b.ward@gmail.com, alongside any relevant context, and a short description of your reasoning.  */
+.gologlogolol {
+  display: inline-block;
+  font-family: sans-serif;
+  font-size: 1.25rem;
+  font-weight: 900;
+  padding: 0 5px;
+}
+
+.tool {
+  border: 1px solid black;
+  display: none;
+  padding: 5px;
+}
+
+.tool.selected {
+  display: block;
+  margin-top: -1px;
+}
+
+.tool-button {
+  background: lightgray;
+  border: 1px solid black;
+  border-radius: 5px 5px 0 0;
+  cursor: pointer;
+  display: inline-block;
+  font-family: sans-serif;
+  padding: 5px;
+}
+
+.tool-button.selected {
+  background: white;
+  border-bottom: 1px solid white;
+  cursor: default;
+}
+
+{{end}}

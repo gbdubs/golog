@@ -1,0 +1,35 @@
+{{define "golog_html"}}
+<!-- golog.html -->
+
+<html>
+<head>
+  <title>Golog</title>
+  <style>
+    {{template "golog_css" .}}
+    {{template "log_search_css" .}}
+    {{template "stack_trace_css" .}}
+  </style>
+</head>
+<body>
+  <nav class="tool-menu">
+    <div class="gologlogolol">golog</div>
+    <div class="tool-button selected" data-tool="log-search">Log Search</div>
+    <div class="tool-button" data-tool="stack-trace">Stack Trace</div>
+  </nav>
+
+  <div id="log-search" class="tool selected">
+    {{template "log_search_html" .}}
+  </div>
+  <div id="stack-trace" class="tool">
+    {{template "stack_trace_html" .}}
+  </div>
+  
+  <script>
+    {{template "golog_js" .}}
+    {{template "log_search_js" .}}
+    {{template "stack_trace_js" .}}
+  </script>
+</body>
+</html>
+
+{{end}}
